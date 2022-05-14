@@ -1,0 +1,40 @@
+{% extends 'recipe/base.html' %}
+
+{% block content %}
+<!-- <ul>
+	{% for d in desserts %}
+    <li>
+    <h2>{{d.title}}</h2>
+{% if d.photo %}
+			<img class="rounded mx-auto d-block" src="{{d.photo.url}}">
+{% endif %}
+            <li style="display: inline-flex;">
+            <p style="margin-right: 5px;">Время подготовки: {{d.preparation_time}} минут |</p>
+            <p>Время приготовления: {{d.cooking_time}} минут</p>
+            </li>
+		</li>
+	{% endfor %}
+</ul> -->
+<div class="row">
+    {% for d in desserts %}
+    <div class="col-md-3" style="margin-top: 20px;">
+      <div class="card">
+        {% if d.photo %}
+        <img src="{{d.photo.url}}" class="card-img-top" alt="" height="250px">
+        {% endif %}
+        <div class="card-body">
+        <h5 class="card-title">{{d.title}}</h5>
+        <p class="card-text">
+            {% for c in category %}
+                {{c}}
+            {% endfor %}
+        </p>
+          <p class="card-text">Время подготовки: {{d.preparation_time}} минут</p>
+          <p class="card-text">Время приготовления: {{d.cooking_time}} минут</p>
+          <a href="#" class="btn btn-primary">Рецепт</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

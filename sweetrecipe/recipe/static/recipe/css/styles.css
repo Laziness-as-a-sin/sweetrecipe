@@ -1,0 +1,19 @@
+
+.mainmenu {
+    display: inline-flex;
+    margin: 10px;
+    padding: 10px;
+    
+}
+
+/* .row {
+    text-align: center;
+  
+} */
+
+.mainico {
+    display: inline-flex;
+    text-align: left;
+    margin: 30px;
+    
+}
